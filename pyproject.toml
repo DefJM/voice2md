@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "voice2md"
+version = "0.1.0"
+description = "Transcribe Apple voice memos to markdown"
+authors = ["defjm <git.mojan@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ollama = "^0.3.3"
+python-dotenv = "^1.0.1"
+tinydb = "^4.8.2"
+openai = "^1.51.2"
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.1.1"
+pytest = "^8.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
