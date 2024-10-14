@@ -87,6 +87,13 @@ class VoiceMemo:
         else:
             res = llm_summarize_transcript(llm_client, self.transcript, model=model)
             res_text = res.choices[0].message.content.strip()
+            # Extract content within tldr_summary tags
+            match = re.search(r'<tldr_summary>(.*?)</tldr_summary>', res_text, re.DOTALL)
+            if match:
+                res_text = match.group(1).strip()
+            else:
+                # If no tags found, use the original text
+                res_text = res_text.strip()
             self.transcript_tldr = res_text
 
     def generate_title(self, llm_client, model):
@@ -99,6 +106,13 @@ class VoiceMemo:
         """
         res = llm_generate_note_title(llm_client, self.transcript, model=model)
         res_text = res.choices[0].message.content.strip()[:80]
+        # Extract content within title tags
+        match = re.search(r'<title>(.*?)</title>', res_text, re.DOTALL)
+        if match:
+            res_text = match.group(1).strip()
+        else:
+            # If no tags found, use the original text
+            res_text = res_text.strip()
         self.transcript_title = self.clean_title(res_text)
 
     def clean_title(self, transcript_title):
