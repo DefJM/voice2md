@@ -3,12 +3,9 @@
 ## Getting started
 
 ### Install Ollama
-
 Install Ollama from https://ollama.com. Verify it's running by testing via command line. Pull the llm-model of your choice, e.g. `ollama pull llama3.2:3b`.
 
-
 ### Install dependencies
-
 From the root folder of the project, run:
 
 ```bash
@@ -19,7 +16,6 @@ poetry install
 
 
 ### Copy voice memos from Apple Voice Memos app
-
 1. Manually copy voice memos from the Apple Voice Memos app to your chosen folder (due to Apple's privacy restrictions).
 
 2. Set input and output paths in `.env` file (see `.env.template`).
@@ -30,14 +26,16 @@ poetry install
 
 5. ⚠️ Remove `Full Disk Access` from Terminal app after copying. 
 
+### Define paths in `.env`
+Copy the `.env_template` file to `.env` and set paths.
 
 ### Run the app
-
 From the root folder of the project, run:
 
 ```bash
 poetry run python app.py
 ```
 
-Processed notes are saved in `path_markdown` directory.
+Processed notes are saved in `PATH_MARKDOWN` (see `.env`).
 
+`
