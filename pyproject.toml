@@ -12,6 +12,8 @@ ollama = "^0.3.3"
 python-dotenv = "^1.0.1"
 tinydb = "^4.8.2"
 openai = "^1.51.2"
+numpy = "2.0.2"
+openai-whisper = "^20240930"
 
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.1.1"

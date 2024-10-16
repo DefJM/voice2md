@@ -150,7 +150,7 @@ def main():
         llm_model,
         overwrite=True,
         max_file_size_mb=2.0,
-        last_n_files=6,
+        last_n_files=3,
     )
 
 
